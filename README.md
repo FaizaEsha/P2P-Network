@@ -5,7 +5,7 @@
 **Assignment:** Peer-to-Peer Network Communication and File Sharing  
 **Student:** Faiza Ahmed Esha  
 **Student ID:** 22201121  
-**Section:** AB  
+**Section:** AB2  
 **Language:** Python
 
 ## 1. Project Overview
@@ -79,30 +79,39 @@ The following screenshots show peer startup, text messaging, file transfer, and 
 
 ### 7.1 Peer Startup
 
+This screenshot shows the successful startup of a peer node with its assigned peer name and listening port.
+
 ![Peer startup](screenshots/01_peer_startup.png)
 
 ### 7.2 Local Text Messaging and File Transfer
+
+It demonstrates text messaging between locally connected peers and the successful transfer of files.
 
 ![Local text messaging and file transfer](screenshots/02_local_text_and_file_test.png)
 
 ### 7.3 Multi-Peer Connections and Audio Transfer
 
+This illustrates communication between multiple connected peers and the transfer of an audio file through the P2P network.
+
 ![Multi-peer connections and audio transfer](screenshots/03_multi_peer_and_audio_transfer.png)
 
 ### 7.4 Four-Peer Network
 
-![Four-peer network](screenshots/04_four_peer_network.png)
+This screenshot presents a four-peer network setup using their IP, demonstrating multiple peer instances from multiple devices operating and communicating within the application.
 
-### 7.5 Cross-Device Communication
+![Four-peer network](screenshots/04_four_peer_network.png)
 
 ![Qirat cross-device communication](screenshots/05_qirat_cross_device_communication.png)
 
 ## 8. Error Handling
 
-The application displays an error message when a send action is attempted without selecting a connected peer.
+The application handles some common network errors:
+- **Connection Refused:** When attempting to connect to a peer that is not running, displays `[ERROR] Connection failed: timed out`.
+- **Invalid IP / Port:** Shows `[ERROR]` message when any duplicate ports try to connect without crashing.
+- **Unselected Peer:** Displays an error message when a send action is attempted without selecting a connected peer `[ERROR] Select a peer from the list first`.
 
 ![Error handling](screenshots/06_error_handling.png)
 
 ## 9. Scope
 
-This project focuses on peer-to-peer networking, TCP connections, text messaging, file transfer, and communication between multiple peers. It does not implement a blockchain or cryptocurrency.
+This project focuses on peer-to-peer networking, TCP connections, text messaging, file transfer, and communication between multiple peers. It does not implement a blockchain or cryptocurrency. The system is designed to demonstrate practical concepts of distributed communication, peer discovery, and reliable data exchange over a network.
