@@ -63,16 +63,51 @@ This project is a Python-based peer-to-peer (P2P) application that allows peers 
 
 Each application instance runs one peer. To run another peer on the same computer, open another terminal and run `python main.py` again with a different listening port.
 
-## 5. How to Use
+## 5. System Overview
 
-1. Enter a peer name and an available port, then click **Start Peer**.
-2. To connect to another peer, enter its IP address and listening port, then click **Connect**.
-3. Select a peer in the **Connected Peers** list before sending a text message or file.
-4. To transfer a file, click **Choose File & Send** and select the file. The receiving peer saves it in the `downloads/` folder.
+Each node works as both a **server and a client**, allowing two-way communication.
 
-For peers on the same computer, use `127.0.0.1` and the other peer's port. For peers on different computers, use the other computer's LAN IP address and the peer's listening port.
+### Accepting Connections (Server)
 
-## 6. How It Works
+Uses `socket()`, `bind()`, `listen()`, and `accept()` to receive connection requests from other nodes.
+
+### Establishing Connections (Client)
+
+Uses `socket()` and `connect()` to initiate communication with another node.
+
+This dual functionality enables direct peer-to-peer communication without a central server.
+
+
+## 6. How to Use
+
+### Step 1: Start a Peer
+1. Run `python main.py`.
+2. Enter a peer name and an available port.
+3. Click **Start Peer**.
+
+### Step 2: Connect Two Peers
+
+**On the Same Computer:**
+1. Open two terminals and run `python main.py` in each.
+2. Start **Peer1** on port `5000` and **Peer2** on port `5001`.
+3. In Peer2's window, enter:
+   - Remote IP: `127.0.0.1`
+   - Remote Port: `5000`
+4. Click **Connect**.
+
+**On Different Computers (Same Wi-Fi/LAN):**
+1. Start a peer on each computer.
+2. Find Computer A's LAN IP (e.g., `192.168.1.10`).
+3. On Computer B, enter Computer A's IP and listening port (`5000`).
+4. Click **Connect**.
+
+### Step 3: Send Messages and Files
+1. Select a peer from the **Connected Peers** list.
+2. Type a message and click **Send**.
+3. To share a file, click **Choose File & Send** and select a file.
+4. Received files are automatically saved in the `downloads/` folder.
+
+## 7. How It Works
 
 **TCP connections:** Each peer listens for incoming connections and can also initiate a connection to another peer. Threads are used to accept and handle peer connections.
 
@@ -80,7 +115,7 @@ For peers on the same computer, use `127.0.0.1` and the other peer's port. For p
 
 **Text and file transfer:** Control messages are encoded as JSON with a four-byte length header. For file transfers, the sender sends file metadata followed by the file's binary data in 64 KB chunks. The receiver writes the data to its `downloads/` folder.
 
-## 7. Testing and Screenshots
+## 8. Testing and Screenshots
 
 The application was tested using two physical devices connected to the same local network: Device 1 runs Windows, and Device 2 runs macOS. The screenshots show different stages of testing; they do not necessarily represent one simultaneous run of every peer.
 
@@ -91,7 +126,7 @@ The application was tested using two physical devices connected to the same loca
 | Device 2 | macOS | Momo | 6000 |
 | Device 2 | macOS | Qirat | 6001 |
 
-### 7.1 Peer Startup
+### 8.1 Peer Startup
 
 This screenshot shows the successful startup of a peer node with its assigned peer name and listening port.
 
@@ -99,7 +134,7 @@ This screenshot shows the successful startup of a peer node with its assigned pe
 
 *Figure 1. Faiza and Esha started on separate ports on the Windows device.*
 
-### 7.2 Local Text Messaging and File Transfer
+### 8.2 Local Text Messaging and File Transfer
 
 It demonstrates text messaging between locally connected peers and the successful transfer of files.
 
@@ -107,7 +142,7 @@ It demonstrates text messaging between locally connected peers and the successfu
 
 *Figure 2. Text messaging and image/PDF file-transfer activity between local peers.*
 
-### 7.3 Multi-Peer Connections and Audio Transfer
+### 8.3 Multi-Peer Connections and Audio Transfer
 
 This illustrates communication between multiple connected peers and the transfer of an audio file through the P2P network.
 
@@ -115,7 +150,7 @@ This illustrates communication between multiple connected peers and the transfer
 
 *Figure 3. Multiple peer connections and audio/file-transfer activity.*
 
-### 7.4 Multi-Peer Network and File Transfer
+### 8.4 Multi-Peer Network and File Transfer
 
 This screenshot presents a four-peer network setup using their IP, demonstrating multiple peer instances from multiple devices communicating and the files are automatically saved in `downloads/` folder.
 
@@ -128,7 +163,7 @@ This screenshot presents a four-peer network setup using their IP, demonstrating
 
 *Figure 5. Qirat connected to a peer using a LAN address, with text/file-transfer activity visible.*
 
-## 8. Error Handling
+## 9. Error Handling
 
 The application reports errors for invalid port input, connection failures, attempts to send without selecting a peer, and file-transfer problems. When a peer disconnects, it is removed from the connected-peer list. An incomplete received file is deleted if a transfer is interrupted.
 
@@ -136,6 +171,8 @@ The application reports errors for invalid port input, connection failures, atte
 
 *Figure 6. The application displays an error when Send is pressed without selecting a peer.*
 
-## 9. Scope
+## 10. Scope
 
 This project demonstrates direct peer-to-peer communication using TCP sockets, text messaging, file transfer, and multiple peer connections. It does not implement a blockchain or cryptocurrency.
+
+The application is designed for local network communication and does not provide encryption or internet-wide peer discovery.
