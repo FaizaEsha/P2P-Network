@@ -93,11 +93,15 @@ The application was tested using two physical devices connected to the same loca
 
 ### 7.1 Peer Startup
 
+This screenshot shows the successful startup of a peer node with its assigned peer name and listening port.
+
 ![Peer startup](screenshots/01_peer_startup.png)
 
 *Figure 1. Faiza and Esha started on separate ports on the Windows device.*
 
 ### 7.2 Local Text Messaging and File Transfer
+
+It demonstrates text messaging between locally connected peers and the successful transfer of files.
 
 ![Local text and file test](screenshots/02_local_text_and_file_test.png)
 
@@ -105,17 +109,20 @@ The application was tested using two physical devices connected to the same loca
 
 ### 7.3 Multi-Peer Connections and Audio Transfer
 
+This illustrates communication between multiple connected peers and the transfer of an audio file through the P2P network.
+
 ![Multi-peer and audio transfer](screenshots/03_multi_peer_and_audio_transfer.png)
 
 *Figure 3. Multiple peer connections and audio/file-transfer activity.*
 
 ### 7.4 Multi-Peer Network and File Transfer
 
+This screenshot presents a four-peer network setup using their IP, demonstrating multiple peer instances from multiple devices communicating and the files are automatically saved in `downloads/` folder.
+
 ![Four-peer network](screenshots/04_four_peer_network.png)
 
 *Figure 4. Peer connections and file-transfer activity in the multi-peer setup.*
 
-### 7.5 Communication Across Devices
 
 ![Qirat cross-device communication](screenshots/05_qirat_cross_device_communication.png)
 
