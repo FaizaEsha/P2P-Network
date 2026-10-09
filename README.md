@@ -34,6 +34,17 @@ This project is a Python-based peer-to-peer (P2P) application that allows peers 
 └── screenshots/       # Assignment screenshots
 ```
 
+### File Responsibilities
+
+| File / Folder | Description |
+| :--- | :--- |
+| `main.py` | Creates the Tkinter GUI for user interaction. |
+| `p2p_node.py` | Manages peer connections, threads, and data transfer. |
+| `protocol.py` | Defines the communication message types. |
+| `requirements.txt` | Lists dependencies. No external packages are needed. |
+| `downloads/` | Saves received files. |
+| `README.md` | Contains setup steps and project details. |
+
 ## 4. Setup and How to Run
 
 1. Extract the project ZIP file.
