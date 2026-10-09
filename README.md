@@ -75,17 +75,33 @@ The screenshots show selected stages of local testing, peer connections, text co
 
 ## 7. Screenshots
 
-The following screenshots are included in the `screenshots/` folder:
+The following screenshots show peer startup, text messaging, file transfer, and multi-peer communication.
 
-1. **`01_peer_startup.png`** – Faiza and Esha started with different listening ports.
-2. **`02_local_text_and_file_test.png`** – local peer connection, text messaging, and image/PDF transfer activity.
-3. **`03_multi_peer_and_audio_transfer.png`** – multiple peer connections and audio-file transfer activity.
-4. **`04_four_peer_network.png`** – peer connections and file-transfer activity in the multi-peer setup.
-5. **`05_qirat_cross_device_communication.png`** – Qirat connected to peers using LAN addresses, with file-transfer activity visible.
+### 7.1 Peer Startup
+
+![Peer startup](screenshots/01_peer_startup.png)
+
+### 7.2 Local Text Messaging and File Transfer
+
+![Local text messaging and file transfer](screenshots/02_local_text_and_file_test.png)
+
+### 7.3 Multi-Peer Connections and Audio Transfer
+
+![Multi-peer connections and audio transfer](screenshots/03_multi_peer_and_audio_transfer.png)
+
+### 7.4 Four-Peer Network
+
+![Four-peer network](screenshots/04_four_peer_network.png)
+
+### 7.5 Cross-Device Communication
+
+![Qirat cross-device communication](screenshots/05_qirat_cross_device_communication.png)
 
 ## 8. Error Handling
 
-The application displays an error message if a send action is attempted without selecting a connected peer. This is shown in **`06_error_handling.png`**.
+The application displays an error message when a send action is attempted without selecting a connected peer.
+
+![Error handling](screenshots/06_error_handling.png)
 
 ## 9. Scope
 
